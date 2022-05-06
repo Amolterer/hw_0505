@@ -70,6 +70,10 @@
 # Delete existing data, so you'll start fresh each time this script is run.
 # Use `Model.destroy_all` code.
 # TODO!
+studio.destroy_all
+movie.destroy_all
+actor.destroy_all
+role.destroy_all
 
 # Generate models and tables, according to the domain model.
 # TODO!
@@ -77,6 +81,60 @@
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
 # TODO!
+new_studio = studio.new
+new_studio["name"] = "Warner Bros."
+
+warner = studio.find_by({name =>"Warner Bros."})
+batman = movie.new
+batman["title"] = "Batman Begins"
+batman["year_released"] = "2005"
+batman["rated"] = "PG-13"
+batman["studio_id"] = warner["id"]
+
+knight = movie.new
+knight["title"] = "The Dark Knight"
+knight["year_released"] = "2008"
+knight["rated"] = "PG-13"
+knight["studio_id"] = warner["id"]
+
+rises = movie.new
+rises["title"] = "The Dark Knight Rises"
+rises["year_released"] = "2012"
+rises["rated"] = "PG-13"
+rises["studio_id"] = warner["id"]
+
+actor = actor.new
+actor["name"] = "Christian Bale"
+
+actor = actor.new
+actor["name"] = "Michael Caine"
+
+actor = actor.new
+actor["name"] = "Liam Neeson"
+
+actor = actor.new
+actor["name"] = "Katie Holmes"
+
+actor = actor.new
+actor["name"] = "Gary Oldman"
+
+actor = actor.new
+actor["name"] = "Heath Ledger"
+
+actor = actor.new
+actor["name"] = "Aaron Eckhart"
+
+actor = actor.new
+actor["name"] = "Maggie Gyllenhaal"
+
+actor = actor.new
+actor["name"] = " Tom Hardy"
+
+actor = actor.new
+actor["name"] = "Joseph Gordon-Levitt"
+
+actor = actor.new
+actor["name"] = "Anne Hathaway"
 
 # Prints a header for the movies output
 puts "Movies"
