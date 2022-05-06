@@ -3,7 +3,6 @@ class CreateStudios < ActiveRecord::Migration[7.0]
     create_table :studios do |t|
 
       t.string :name
-      
       t.timestamps
     end
   end
