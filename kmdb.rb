@@ -267,24 +267,36 @@ puts ""
 
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
-roles=Role.all
-puts roles.inspect
-puts "There are #{Movie.all.count} movies"
+
 movies = Movie.all
-for title in movies
-    film_title = film["title"]
-    puts "#{film_title}"
+for film in movies
+    title = film["title"]
+    year = film["year_released"] 
+    rating = film["rated"]
+    studio_identity = film["studio_id"]
+    studio_record = Studio.find_by({"id" => studio_identity})
+    studio_name = studio_record["name"]
+    puts "#{title} #{year} #{rating} #{studio_name}"
+
 end
-movies=Movie.all
-puts movies.inspect
-
-
 
 # Prints a header for the cast output
 puts ""
 puts "Top Cast"
 puts "========"
 puts ""
+roles = Role.all
+for role in roles
+
+    actor_identity = role["acto_id"]
+    actor_record = Actor.find_by({"id" => actor_identity})
+    actor_name = actor_record["name"]
+    role_name = role["character_name"]
+    movie_record=Movie.find_by({"id" => role["movie_id"]})
+    movie_title = movie_record["title"] 
+    puts "#{movie_title} #{actor_name} #{role_name}"
+
+end
 
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
