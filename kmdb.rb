@@ -121,6 +121,7 @@ actor["name"] = "Gary Oldman"
 actor = actor.new
 actor["name"] = "Heath Ledger"
 
+role = role.new
 actor = actor.new
 actor["name"] = "Aaron Eckhart"
 
@@ -135,6 +136,68 @@ actor["name"] = "Joseph Gordon-Levitt"
 
 actor = actor.new
 actor["name"] = "Anne Hathaway"
+
+batman = movie.find_by({title => "Batman Begins"})
+bale = actor.find_by({name =>"Christian Bale"})
+caine = actor.find_by({name =>"Michael Caine"})
+neeson = actor.find_by({name =>"Liam Neeson"})
+holmes = actor.find_by({name =>"Katie Holmes"})
+oldman = actor.find_by({name =>"Gary Oldman "})
+
+role = role.new
+role["movie_id"] = batman["id"]
+role["acto_id"] = bale["id"]
+role["character_name"] = "Bruce Wayne"
+
+role = role.new
+role["movie_id"] = batman["id"]
+role["acto_id"] = caine["id"]
+role["character_name"] = "Alfred"
+
+role = role.new
+role["movie_id"] = batman["id"]
+role["acto_id"] = neeson["id"]
+role["character_name"] = "Ra's Al Ghul"
+
+role = role.new
+role["movie_id"] = batman["id"]
+role["acto_id"] = holmes["id"]
+role["character_name"] = "Rachel Dawes"
+
+role = role.new
+role["movie_id"] = batman["id"]
+role["acto_id"] = oldman["id"]
+role["character_name"] = "Commissioner Gordon"
+
+knight = movie.find_by({title => "The Dark Knight"})
+ledger = actor.find_by({name =>"Heath Ledger"})
+eckhart = actor.find_by({name =>"Aaron Eckhart "})
+gyllenhaal = actor.find_by({name =>"Maggie Gyllenhaal"})
+
+role = role.new
+role["movie_id"] = knight["id"]
+role["acto_id"] = bale["id"]
+role["character_name"] = "Bruce Wayne"
+
+role = role.new
+role["movie_id"] = knight["id"]
+role["acto_id"] = ledger["id"]
+role["character_name"] = "Joker"
+
+role = role.new
+role["movie_id"] = knight["id"]
+role["acto_id"] = eckhart["id"]
+role["character_name"] = "Harvey Dent"
+
+role = role.new
+role["movie_id"] = knight["id"]
+role["acto_id"] = caine["id"]
+role["character_name"] = "Alfred"
+
+role = role.new
+role["movie_id"] = knight["id"]
+role["acto_id"] = gyllenhaal["id"]
+role["character_name"] = "Rachel Dawes"
 
 # Prints a header for the movies output
 puts "Movies"
